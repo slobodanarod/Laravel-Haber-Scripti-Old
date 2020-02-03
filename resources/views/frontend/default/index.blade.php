@@ -308,18 +308,19 @@
                             @foreach($data["last_news"] as $news)
                                 <div class="col-md-4">
                                     <div class="post-overaly-style post-sm"
-                                         style="background-image:url('/images/blogs/{{$news["file"]}}')">
-                                        <a href="{{route("frontend.blog.index",$news["slug"])}}"
+                                         style="background-image:url('/images/blogs/{{$news->file}}')">
+                                        <a href="{{route("frontend.blog.index",$news->slug)}}"
                                            class="image-link">&nbsp;</a>
                                         <div class="overlay-post-content">
                                             <div class="post-content" style="
     padding-top: 0px !important;
     min-height: 70px;
 ">
-{{--                                                <small><a href="{{route("frontend.category.index",$news[0]["category_slug"])}}">{{$news[0]["category_name"]}}</a></small>--}}
+                                                <small><a
+                                                        href="{{route("frontend.category.index",$news->category_slug)}}">{{$news->category_name}}</a></small>
                                                 <h2 class="post-title mb-0">
-                                                    <a href="{{route("frontend.blog.index",$news["slug"])}}">
-                                                        <b>{{$news["title"]}} </b></a>
+                                                    <a href="{{route("frontend.blog.index",$news->slug)}}">
+                                                        <b>{{$news->title}} </b></a>
                                                 </h2>
                                             </div>
                                         </div>

@@ -23,16 +23,13 @@ class DefaultController extends Controller
     {
 
         $data[ "last_news" ] = Blogs::whereNull("author")->get()->sortByDesc("id")->take(6)->toArray();
-
-//        $i = 8;
-//        foreach ($data[ "last_news" ] as $key => $value)
-//        {
-//
-//            $category = DB::table("categories")->join("blogs_categories", "blogs_categories.categories_id", "=", "categories.id")->join("blogs", "blogs_categories.blogs_id", "=", "blogs.id")->where("blogs.id", $value[ "id" ])->selectRaw("categories.name as category_name,categories.slug as category_slug")->get()->take(1);
-//            array_push($data[ "last_news" ][$i], array("category_name" => $category[0]->category_name , "category_slug" => $category[0]->category_slug));
-//            $i--;
-//              }
-
+        $data["last_news"] = DB::table("blogs")
+            ->join("categories","categories.id","=","blogs.main_cat")
+            ->selectRaw("categories.name as category_name,categories.slug as category_slug,blogs.*")
+            ->get()
+            ->sortByDesc("id")
+            ->take(6)
+            ->toArray();
 
         $data[ "sliderL" ]  = Sliders::all()->sortBy("must");
         $data[ "blogs" ]    = Blogs::where("author", 0)->orderBy('id', 'desc')->get()->sortBy("must");

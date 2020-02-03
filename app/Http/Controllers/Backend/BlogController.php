@@ -100,11 +100,19 @@ class BlogController extends Controller
 
             if (isset($request->categories))
             {
+                $i = 0;
                 foreach ($request->categories as $k => $v)
                 {
-
-                    $categories = DB::table("blogs_categories")->insert(["blogs_id" => $blog, "categories_id" => $v]);
-
+                    if ($i == 0)
+                    {
+                        $update     = Blogs::where("id", $blog)->update(["main_cat" => $v]);
+                        $categories = DB::table("blogs_categories")->insert(["blogs_id" => $blog, "categories_id" => $v]);
+                    }
+                    else
+                    {
+                        $categories = DB::table("blogs_categories")->insert(["blogs_id" => $blog, "categories_id" => $v]);
+                    }
+                    $i++;
                 }
             }
 
@@ -144,6 +152,7 @@ class BlogController extends Controller
         {
             $data[ "tags" ] .= $v->name . ",";
         }
+        $data[ "category" ] = Categories::where("id",$data["blogs"]["main_cat"])->first()->toArray();
 
         return view("backend.blogs.edit", compact('data'));
 
@@ -216,11 +225,19 @@ class BlogController extends Controller
             DB::table("blogs_categories")->where("blogs_id", $id)->delete();
             if (isset($request->categories))
             {
+                $i = 0;
                 foreach ($request->categories as $k => $v)
                 {
-
-                    $categories = DB::table("blogs_categories")->insert(["blogs_id" => $id, "categories_id" => $v]);
-
+                    if ($i == 0)
+                    {
+                        $update     = Blogs::where("id", $id)->update(["main_cat" => $v]);
+                        $categories = DB::table("blogs_categories")->insert(["blogs_id" => $id, "categories_id" => $v]);
+                    }
+                    else
+                    {
+                        $categories = DB::table("blogs_categories")->insert(["blogs_id" => $id, "categories_id" => $v]);
+                    }
+                    $i++;
                 }
             }
 

@@ -123,7 +123,6 @@
                     <h5>Kategori Ayarları</h5>
                     <span id="cloneCategory" class="btn btn-success" style="padding: 3px;float: right;">ekle +</span>
 
-
                     @foreach($data["categories_blogs"] as $k => $value1)
 
                         <div class="form-group" id="category">
@@ -159,7 +158,7 @@
 
                     <div align="right" class="box-footer">
                         <input type="hidden" value="{{$data["blogs"]->file}}" name="old_file">
-                        <button class="btn btn-success" type="submit">Ekle</button>
+                        <button class="btn btn-success" type="submit">Güncelle</button>
                     </div>
 
                 </form>
