@@ -22,7 +22,9 @@ class BlogController extends Controller
         if ($data[ "blog" ][ "author" ] != 0)
         {
             $data[ "writer" ]   = User::where("id", $data[ "blog" ][ "author" ])->first();
-            $data[ "comments" ] = DB::table('comments')->join('users', 'users.id', '=', 'comments.users_id')->where('blogs_id', $data[ "blog" ][ "id" ])->selectRaw("comments.*,users.name,users.file,users.id as userID")->get();
+            $data[ "comments" ] = DB::table('comments')
+                ->join('users', 'users.id', '=', 'comments.users_id')
+                ->where('blogs_id', $data[ "blog" ][ "id" ])->selectRaw("comments.*,users.name,users.file,users.id as userID")->get();
             $data[ "gundem" ]   = Categories::find(7)->news()->get()->take(6)->distinct("blogs.id")->sortByDesc("id");
 
         }

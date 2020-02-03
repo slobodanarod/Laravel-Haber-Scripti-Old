@@ -21,19 +21,31 @@ class DefaultController extends Controller
 
     public function index ()
     {
-        $data[ "last_news" ] = Blogs::whereNull("author")->get()->sortByDesc("id")->take(6);
-        $data[ "sliderL" ]   = Sliders::all()->sortBy("must");
-        $data[ "blogs" ]     = Blogs::where("author", 0)->orderBy('id', 'desc')->get()->sortBy("must");
-        $data[ "gundem" ]    = Categories::find(7)->news()->orderBy('id', 'desc')->distinct("blogs.id")->get()->take(6);
-        $data[ "bannerSR" ]  = Banners::where([["position", "=", 1], ["status", "=", "1"]])->orderBy('must', 'asc')->get()->take(2);
-        $data[ "bannerST" ]  = Banners::where("position", 3)->orderBy('id', 'desc')->get()->take(4);
-        $data[ "yasam" ]     = Categories::find(9)->news()->distinct("blogs.id")->orderBy('id', 'desc')->get();
-        $data[ "saglik" ]    = Categories::find(17)->news()->distinct("blogs.id")->orderBy('id', 'desc')->get()->take(6);
-        $data[ "magazin" ]   = Categories::find(20)->news()->orderBy('id', 'desc')->get();
-        $data[ "dunya" ]     = Categories::find(10)->news()->orderBy('id', 'desc')->get();
-        $data[ "ekonomi" ]   = Categories::find(11)->news()->orderBy('id', 'desc')->get();
-        $data[ "yerel" ]     = Categories::find(19)->news()->orderBy('id', 'desc')->get();
-        $data[ "spor" ]      = Categories::find(8)->news()->orderBy('id', 'desc')->get();
+
+        $data[ "last_news" ] = Blogs::whereNull("author")->get()->sortByDesc("id")->take(6)->toArray();
+
+        $i = 8;
+        foreach ($data[ "last_news" ] as $key => $value)
+        {
+
+            $category = DB::table("categories")->join("blogs_categories", "blogs_categories.categories_id", "=", "categories.id")->join("blogs", "blogs_categories.blogs_id", "=", "blogs.id")->where("blogs.id", $value[ "id" ])->selectRaw("categories.name as category_name,categories.slug as category_slug")->get()->take(1);
+            array_push($data[ "last_news" ][$i], ["category_name" => $category[0]->category_name , "category_slug" => $category[0]->category_slug]);
+            $i--;
+              }
+
+
+        $data[ "sliderL" ]  = Sliders::all()->sortBy("must");
+        $data[ "blogs" ]    = Blogs::where("author", 0)->orderBy('id', 'desc')->get()->sortBy("must");
+        $data[ "gundem" ]   = Categories::find(7)->news()->orderBy('id', 'desc')->distinct("blogs.id")->get()->take(6);
+        $data[ "bannerSR" ] = Banners::where([["position", "=", 1], ["status", "=", "1"]])->orderBy('must', 'asc')->get()->take(2);
+        $data[ "bannerST" ] = Banners::where("position", 3)->orderBy('id', 'desc')->get()->take(4);
+        $data[ "yasam" ]    = Categories::find(9)->news()->distinct("blogs.id")->orderBy('id', 'desc')->get();
+        $data[ "saglik" ]   = Categories::find(17)->news()->distinct("blogs.id")->orderBy('id', 'desc')->get()->take(6);
+        $data[ "magazin" ]  = Categories::find(20)->news()->orderBy('id', 'desc')->get();
+        $data[ "dunya" ]    = Categories::find(10)->news()->orderBy('id', 'desc')->get();
+        $data[ "ekonomi" ]  = Categories::find(11)->news()->orderBy('id', 'desc')->get();
+        $data[ "yerel" ]    = Categories::find(19)->news()->orderBy('id', 'desc')->get();
+        $data[ "spor" ]     = Categories::find(8)->news()->orderBy('id', 'desc')->get();
 
         /* HAVA DURUMU */
         $weather               = new WeatherHelper();

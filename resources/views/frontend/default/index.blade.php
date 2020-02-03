@@ -3,37 +3,37 @@
     <section class="no-padding hidden-xs hidden-lg">
         <div class="container">
 
-{{--            <section class="block-wrapper" style="padding:20px 0;" id="news_top_slider">--}}
-{{--                <div class="container">--}}
-{{--                    <div class="row ts-gutter-30">--}}
-{{--                        <div class="col-lg-12 col-md-12">--}}
+            {{--            <section class="block-wrapper" style="padding:20px 0;" id="news_top_slider">--}}
+            {{--                <div class="container">--}}
+            {{--                    <div class="row ts-gutter-30">--}}
+            {{--                        <div class="col-lg-12 col-md-12">--}}
 
-{{--                            <div class="row text-light ts-gutter-30">--}}
+            {{--                            <div class="row text-light ts-gutter-30">--}}
 
-{{--                                @foreach($data["bannerST"] as $banner)--}}
+            {{--                                @foreach($data["bannerST"] as $banner)--}}
 
-{{--                                    <div class="col-md-3" style=" padding: 15px 5px; ">--}}
-{{--                                        <div class="post-overaly-style post-sm"--}}
-{{--                                             style="background-image:url('/images/banners/{{$banner->file}}')">--}}
-{{--                                            <a href="{{  $banner->url }}" class="image-link">&nbsp;</a>--}}
-{{--                                            <div class="overlay-post-content">--}}
-{{--                                                <div class="post-content">--}}
+            {{--                                    <div class="col-md-3" style=" padding: 15px 5px; ">--}}
+            {{--                                        <div class="post-overaly-style post-sm"--}}
+            {{--                                             style="background-image:url('/images/banners/{{$banner->file}}')">--}}
+            {{--                                            <a href="{{  $banner->url }}" class="image-link">&nbsp;</a>--}}
+            {{--                                            <div class="overlay-post-content">--}}
+            {{--                                                <div class="post-content">--}}
 
-{{--                                                    <h2 class="post-title mb-0">--}}
-{{--                                                        <a href="{{  $banner->url }}">{{$banner->name}}</a>--}}
-{{--                                                    </h2>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
+            {{--                                                    <h2 class="post-title mb-0">--}}
+            {{--                                                        <a href="{{  $banner->url }}">{{$banner->name}}</a>--}}
+            {{--                                                    </h2>--}}
+            {{--                                                </div>--}}
+            {{--                                            </div>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                @endforeach--}}
+            {{--                            </div>--}}
 
-{{--                        </div>--}}
+            {{--                        </div>--}}
 
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </section>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </section>--}}
 
 
             <div class="row ts-gutter-20" style="padding:10px 0;">
@@ -56,36 +56,36 @@
 
                     </div>
 
-{{--                    <div class="col-lg-12 col-md-12 pad-r row " id="doviz" style="--}}
-{{--    border: 1px solid #ccc;--}}
-{{--    margin-top: 20px;--}}
-{{--    display: none;--}}
+                    {{--                    <div class="col-lg-12 col-md-12 pad-r row " id="doviz" style="--}}
+                    {{--    border: 1px solid #ccc;--}}
+                    {{--    margin-top: 20px;--}}
+                    {{--    display: none;--}}
 
-{{--">--}}
-{{--                        <div class="clearfix" style="display: block;width: 33%; text-align: center;">--}}
-{{--                            <span style="font-weight: bold;">EURO € </span>--}}
-{{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
-{{--                                <span class="thermometer">{{ $settings["euro"] }} </span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                    {{--">--}}
+                    {{--                        <div class="clearfix" style="display: block;width: 33%; text-align: center;">--}}
+                    {{--                            <span style="font-weight: bold;">EURO € </span>--}}
+                    {{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
+                    {{--                                <span class="thermometer">{{ $settings["euro"] }} </span>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
 
-{{--                        <div class="clearfix" style="display: block;width: 33%;text-align: center;">--}}
-{{--                            <span style="font-weight: bold;">DOLAR € </span>--}}
-{{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
-{{--                                <span class="thermometer">{{ $settings["dolar"] }} </span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                    {{--                        <div class="clearfix" style="display: block;width: 33%;text-align: center;">--}}
+                    {{--                            <span style="font-weight: bold;">DOLAR € </span>--}}
+                    {{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
+                    {{--                                <span class="thermometer">{{ $settings["dolar"] }} </span>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
 
-{{--                        <div class="clearfix" style="display: block;width: 33%;text-align: center;">--}}
-{{--                            <span style="font-weight: bold;">ALTIN </span>--}}
-{{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
-{{--                                <span class="thermometer">{{ $settings["gram_altin"] }} </span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                    {{--                        <div class="clearfix" style="display: block;width: 33%;text-align: center;">--}}
+                    {{--                            <span style="font-weight: bold;">ALTIN </span>--}}
+                    {{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
+                    {{--                                <span class="thermometer">{{ $settings["gram_altin"] }} </span>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
 
-{{--                        </ul>--}}
+                    {{--                        </ul>--}}
 
-{{--                    </div>--}}
+                    {{--                    </div>--}}
 
 
                     <div class="col-lg-12 col-md-12 pad-r row mobil-gizle" id="hava_durumu">
@@ -241,59 +241,61 @@
 
     @if($settings["yazarlar"] == "1")
 
-    <!-- yazarlar list -->
-        <section class="block-slider mt-30" style="padding: 0;margin: 20px 0px;">
-            <div class="container">
-                <a style="float:right;color: black;font-weight: bold;" href="/writers">Tüm yazarlar >></a>
-                <h2 style="
+        <!-- yazarlar list -->
+            <section class="block-slider mt-30" style="padding: 0;margin: 20px 0px;">
+                <div class="container">
+                    <a style="float:right;color: black;font-weight: bold;" href="/writers">Tüm yazarlar >></a>
+                    <h2 style="
         width: 115px;
         background: red;
         padding: 5px;
         color: white;
     ">YAZARLAR</h2>
-                <div class="ts-grid-box">
-                    <div class="owl-carousel dot-style2" id="writer-slider">
+                    <div class="ts-grid-box">
+                        <div class="owl-carousel dot-style2" id="writer-slider">
 
-                        @foreach($data["writers"] as $k => $v)
+                            @foreach($data["writers"] as $k => $v)
 
-                            <div class="item">
-                                <div class="post-block-style" style="text-align: center;">
+                                <div class="item">
+                                    <div class="post-block-style" style="text-align: center;">
 
-                                    <div class="post-thumb">
-                                        <a href="{{route("frontend.blog.index",$v["slug"])}} ">
-                                            <img style="border-radius: 100%;"
-                                                 src="/images/users/{{$v["file"]}}" alt="{{$v["name"]}}"/>
-                                        </a>
-                                    </div>
-
-                                    <div class="post-content">
-                                        <h2 class="post-title" style="text-align: center;margin: 10px;">
-                                            <a href="{{route("frontend.blog.index",$v["slug"])}}"
-                                               style="color: black;font-weight: bold;font-size: 17px;">
-                                                {{ $v["name"] }}
+                                        <div class="post-thumb">
+                                            <a href="{{route("frontend.blog.index",$v["slug"])}} ">
+                                                <img style="border-radius: 100%;"
+                                                     src="/images/users/{{$v["file"]}}" alt="{{$v["name"]}}"/>
                                             </a>
-                                            <br>
-                                            <a href="{{route("frontend.blog.index",$v["slug"])}}">
-                                                <small>{{$v["title"]}}</small>
-                                            </a>
-                                        </h2>
+                                        </div>
 
+                                        <div class="post-content">
+                                            <h2 class="post-title" style="text-align: center;margin: 10px;">
+                                                <a href="{{route("frontend.blog.index",$v["slug"])}}"
+                                                   style="color: black;font-weight: bold;font-size: 17px;">
+                                                    {{ $v["name"] }}
+                                                </a>
+                                                <br>
+                                                <a href="{{route("frontend.blog.index",$v["slug"])}}">
+                                                    <small>{{$v["title"]}}</small>
+                                                </a>
+                                            </h2>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
-            <!-- container end-->
-        </section>
-        <!-- yazarlar list -->
+                <!-- container end-->
+            </section>
+            <!-- yazarlar list -->
         @endif
 
-        <a href="mailto:{{$settings["whatsapp"]}}?Subject=Haberim%20Var" target="_top"><img class="masaustu-gizle" style="width: 100%" src="/images/whatsapp-haber.png"></a>
+        <a href="mailto:{{$settings["whatsapp"]}}?Subject=Haberim%20Var" target="_top"><img class="masaustu-gizle"
+                                                                                            style="width: 100%"
+                                                                                            src="/images/whatsapp-haber.png"></a>
         <!-- son haberler 12li -->
         <section class="block-wrapper" style="padding:20px 0;">
             <div class="container">
@@ -304,22 +306,25 @@
 
 
                             @foreach($data["last_news"] as $news)
-
                                 <div class="col-md-4">
                                     <div class="post-overaly-style post-sm"
-                                         style="background-image:url('/images/blogs/{{$news->file}}')">
-                                        <a href="{{route("frontend.blog.index",$news->slug)}}"
+                                         style="background-image:url('/images/blogs/{{$news["file"]}}')">
+                                        <a href="{{route("frontend.blog.index",$news["slug"])}}"
                                            class="image-link">&nbsp;</a>
                                         <div class="overlay-post-content">
-                                            <div class="post-content">
-
+                                            <div class="post-content" style="
+    padding-top: 0px !important;
+    min-height: 70px;
+">
+                                                <small><a href="{{route("frontend.category.index",$news[0]["category_slug"])}}">{{$news[0]["category_name"]}}</a></small>
                                                 <h2 class="post-title mb-0">
-                                                    <a href="{{route("frontend.blog.index",$news->slug)}}"> <b>{{$news->title}} </b></a>
+                                                    <a href="{{route("frontend.blog.index",$news["slug"])}}">
+                                                        <b>{{$news["title"]}} </b></a>
                                                 </h2>
                                             </div>
                                         </div>
-                                    </div><!-- post end -->
-                                </div><!-- end col -->
+                                    </div>
+                                </div>
                             @endforeach
 
 
