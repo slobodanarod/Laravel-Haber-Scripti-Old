@@ -768,9 +768,8 @@ width: 100%;
                                         <div class="overlay-post-content">
                                             <div class="post-content">
 
-
                                                 <h2 class="post-title mb-0">
-                                                    <a href="{{ route("frontend.blog.index",$v["slug"])  }}">{{$v["title"]}}</a>
+                                                    <a href="{{ route("frontend.blog.index",$v["slug"])  }}"><b>{{$v["title"]}}</b></a>
                                                 </h2>
                                             </div>
                                         </div>
