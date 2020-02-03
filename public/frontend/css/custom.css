@@ -1,0 +1,8 @@
+#haber-tek{
+    max-width: 100%;
+}
+#haber-tek .post-media img{
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+}
