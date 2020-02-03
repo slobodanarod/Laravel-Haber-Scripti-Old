@@ -24,14 +24,14 @@ class DefaultController extends Controller
 
         $data[ "last_news" ] = Blogs::whereNull("author")->get()->sortByDesc("id")->take(6)->toArray();
 
-        $i = 8;
-        foreach ($data[ "last_news" ] as $key => $value)
-        {
-
-            $category = DB::table("categories")->join("blogs_categories", "blogs_categories.categories_id", "=", "categories.id")->join("blogs", "blogs_categories.blogs_id", "=", "blogs.id")->where("blogs.id", $value[ "id" ])->selectRaw("categories.name as category_name,categories.slug as category_slug")->get()->take(1);
-            array_push($data[ "last_news" ][$i], ["category_name" => $category[0]->category_name , "category_slug" => $category[0]->category_slug]);
-            $i--;
-              }
+//        $i = 8;
+//        foreach ($data[ "last_news" ] as $key => $value)
+//        {
+//
+//            $category = DB::table("categories")->join("blogs_categories", "blogs_categories.categories_id", "=", "categories.id")->join("blogs", "blogs_categories.blogs_id", "=", "blogs.id")->where("blogs.id", $value[ "id" ])->selectRaw("categories.name as category_name,categories.slug as category_slug")->get()->take(1);
+//            array_push($data[ "last_news" ][$i], ["category_name" => $category[0]->category_name , "category_slug" => $category[0]->category_slug]);
+//            $i--;
+//              }
 
 
         $data[ "sliderL" ]  = Sliders::all()->sortBy("must");

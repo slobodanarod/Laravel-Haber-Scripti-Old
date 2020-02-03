@@ -316,7 +316,7 @@
     padding-top: 0px !important;
     min-height: 70px;
 ">
-                                                <small><a href="{{route("frontend.category.index",$news[0]["category_slug"])}}">{{$news[0]["category_name"]}}</a></small>
+{{--                                                <small><a href="{{route("frontend.category.index",$news[0]["category_slug"])}}">{{$news[0]["category_name"]}}</a></small>--}}
                                                 <h2 class="post-title mb-0">
                                                     <a href="{{route("frontend.blog.index",$news["slug"])}}">
                                                         <b>{{$news["title"]}} </b></a>
