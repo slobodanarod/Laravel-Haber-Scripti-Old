@@ -314,7 +314,7 @@
                                             <div class="post-content">
 
                                                 <h2 class="post-title mb-0">
-                                                    <a href="{{route("frontend.blog.index",$news->slug)}}">{{$news->title}}</a>
+                                                    <a href="{{route("frontend.blog.index",$news->slug)}}"> <b>{{$news->title}} </b></a>
                                                 </h2>
                                             </div>
                                         </div>
