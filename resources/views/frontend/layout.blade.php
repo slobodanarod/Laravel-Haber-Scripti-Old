@@ -7,12 +7,19 @@
     ================================================== -->
     <meta charset="utf-8">
     <title>@yield("title") {{ $settings["title"]  }}</title>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WWWB58L');</script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<meta name="description" content="{{ $settings["description"] }} "/>
+	<meta name="description" content="{{ $settings["keywords"] }} "/>
 
     @yield("css")
     <link rel="stylesheet" href="/frontend/css/bootstrap.min.css">
@@ -61,6 +68,10 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWWB58L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="trending-bar trending-light d-md-block">
     <div class="container">
         <div class="row justify-content-between">
@@ -127,7 +138,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="true" aria-label="Toggle navigation">
-                        <span class="fa fa-bars"></span>
+                        <i class="fa fa-bars"></i>
                     </button>
                     <div id="navbarSupportedContent" class="collapse navbar-collapse navbar-responsive-collapse">
                         <ul class="nav navbar-nav">
@@ -142,7 +153,8 @@
                                     <li class="nav-item dropdown active">
                                         <a href="" class="menu-dropdown" data-toggle="dropdown">{{$v["name"]}} <i
                                                 class="fa fa-angle-down"></i></a>
-                                        <ul class="dropdown-menu" role="menu" style="position: absolute !important;">
+                                        <ul class="dropdown-menu" role="menu" style="position: absolute !important; background: rgb(248, 248, 248);
+    width: 100%;">
                                             @foreach($v["child"]["0"] as $k => $v)
                                                 <li class="active"><a
                                                         href="{{route("frontend.category.index",$v["slug"])}}">{{$v["name"]}}</a>

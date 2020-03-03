@@ -56,39 +56,193 @@
 
                     </div>
 
-                    {{--                    <div class="col-lg-12 col-md-12 pad-r row " id="doviz" style="--}}
-                    {{--    border: 1px solid #ccc;--}}
-                    {{--    margin-top: 20px;--}}
-                    {{--    display: none;--}}
+                    <div class="col-lg-12 col-md-12 pad-r row">
+                        <div class="finance" style="min-width: 100%;">
+                            <div class="finance-inner">
+                                <input type="hidden" name="exchange-lcd" id="exchange-lcd" >
+                                <ul class="_flex _jcc clearfix">
 
-                    {{--">--}}
-                    {{--                        <div class="clearfix" style="display: block;width: 33%; text-align: center;">--}}
-                    {{--                            <span style="font-weight: bold;">EURO € </span>--}}
-                    {{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
-                    {{--                                <span class="thermometer">{{ $settings["euro"] }} </span>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
+                                    <li class="_flex _aic _jcsb {{ \App\Helper\Para::updown($data["borsa"][2]->artis) }}">
+                                        <div class="f-content _flex _jcsb">
+                                            <div class="f-left _flex _aic _jcsb">
+                                                <div class="fwrapper">
 
-                    {{--                        <div class="clearfix" style="display: block;width: 33%;text-align: center;">--}}
-                    {{--                            <span style="font-weight: bold;">DOLAR € </span>--}}
-                    {{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
-                    {{--                                <span class="thermometer">{{ $settings["dolar"] }} </span>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
+                                                    <span class="f-name">DOLAR</span>
+                                                </div>
+                                                <div class="arr ion-arrow-{{ \App\Helper\Para::updown($data["borsa"][2]->artis) }}-a"></div>
+                                            </div>
+                                            <div class="f-right">
+                                                <span class="f-value">{{ $data["borsa"][2]->fiyat }}</span>
+                                                <span class="f-ratio">(%{{ $data["borsa"][2]->artis }} )</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="_flex _aic _jcsb {{ \App\Helper\Para::updown($data["borsa"][1]->artis) }}">
+                                        <div class="f-content _flex _jcsb">
+                                            <div class="f-left _flex _aic _jcsb">
+                                                <div class="fwrapper">
 
-                    {{--                        <div class="clearfix" style="display: block;width: 33%;text-align: center;">--}}
-                    {{--                            <span style="font-weight: bold;">ALTIN </span>--}}
-                    {{--                            <div style="margin-top: 5px;margin-left: 0;">--}}
-                    {{--                                <span class="thermometer">{{ $settings["gram_altin"] }} </span>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
+                                                    <span class="f-name">EURO</span>
+                                                </div>
+                                                <div class="arr ion-arrow-{{ \App\Helper\Para::updown($data["borsa"][1]->artis) }}-a"></div>
+                                            </div>
+                                            <div class="f-right">
+                                                <span class="f-value">{{ $data["borsa"][1]->fiyat }}</span>
+                                                <span class="f-ratio">(%{{ $data["borsa"][1]->artis }} )</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="_flex _aic _jcsb {{ \App\Helper\Para::updown($data["borsa"][0]->artis) }}">
+                                        <div class="f-content _flex _jcsb">
+                                            <div class="f-left _flex _aic _jcsb">
+                                                <div class="fwrapper">
 
-                    {{--                        </ul>--}}
+                                                    <span class="f-name">ALTIN</span>
+                                                </div>
+                                                <div class="arr ion-arrow-{{ \App\Helper\Para::updown($data["borsa"][0]->artis) }}-a"></div>
+                                            </div>
+                                            <div class="f-right">
+                                                <span class="f-value">{{ $data["borsa"][0]->fiyat }}</span>
+                                                <span class="f-ratio">(%{{ $data["borsa"][0]->artis }} )</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="_flex _aic _jcsb {{ \App\Helper\Para::updown($data["borsa"][3]->artis) }}">
+                                        <div class="f-content _flex _jcsb">
+                                            <div class="f-left _flex _aic _jcsb">
+                                                <div class="fwrapper">
 
-                    {{--                    </div>--}}
+                                                    <span class="f-name">BIST 100</span>
+                                                </div>
+                                                <div class="arr ion-arrow-{{ \App\Helper\Para::updown($data["borsa"][3]->artis) }}-a"></div>
+                                            </div>
+                                            <div class="f-right">
+                                                <span class="f-value">{{ $data["borsa"][3]->fiyat }}</span>
+                                                <span class="f-ratio">(%{{ $data["borsa"][3]->artis }} )</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
 
 
-                    <div class="col-lg-12 col-md-12 pad-r row mobil-gizle" id="hava_durumu">
+                        <style>
+
+
+                            .finance-inner {
+                                background:#fff
+                            }
+                            .finance-inner ul,.finance-inner li,.finance-inner .f-left {
+                                display:-ms-flexbox;
+                                display:-webkit-box;
+                                display:-moz-flex;
+                                display:flex
+                            }
+                            .finance-inner ul {
+                                -ms-flex-pack:center;
+                                -webkit-box-pack:center;
+                                justify-content:center
+                            }
+                            .finance-inner li {
+                                padding:10px;
+                                -webkit-box-align:center;
+                                -ms-flex-align:center;
+                                align-items:center;
+                                width:calc((100% / 4))
+                            }
+                            @media screen and (max-width:576px) {
+                                .finance ul {padding-left: 5px;}
+                                .finance-inner li {
+                                    padding:15px 9px
+                                }
+                            }
+                            .finance-inner li+li {
+                                border-left:solid 1px #eee
+                            }
+                            .finance-inner .f-content {
+                                width:100%
+                            }
+                            .finance-inner .f-left {
+                                -webkit-box-align:center;
+                                -ms-flex-align:center;
+                                align-items:center
+                            }
+                            .finance-inner .f-right {
+                                display:-ms-flexbox;
+                                display:-webkit-box;
+                                display:-moz-flex;
+                                display:flex;
+                            }
+                            @media screen and (max-width:576px) {
+                                .finance-inner .f-right {
+                                    display:block
+                                }
+                            }
+                            .finance-inner .f-right>*+* {
+                                margin-left:4px
+                            }
+                            @media screen and (max-width:576px) {
+                                .finance-inner .f-right>*+* {
+                                    margin-left:0
+                                }
+                            }
+                            .finance-inner span[class^=f-] {
+                                display:block
+                            }
+                            .finance-inner span[class^=f-].f-time {
+                                display:none
+                            }
+                            .finance-inner .f-name,.finance-inner .f-value {
+                                font-weight:700
+                            }
+                            .finance-inner .f-name {
+                                font-size:14px;
+                                white-space:nowrap
+                            }
+                            @media screen and (max-width:576px) {
+                                .finance-inner .f-name {
+                                    font-size:13px
+                                }
+                            }
+                            .finance-inner .f-name a {
+                                color:initial
+                            }
+                            .finance-inner .f-value {
+                                font-size:13px
+                            }
+                            .f-ratio {
+                                font-size:12px
+                            }
+                            .down .f-ratio {
+                                color:#ec0b0b
+                            }
+                            .up .f-ratio {
+                                color:#3ab515
+                            }
+                            @media screen and (max-width:576px) {
+                                .f-ratio {
+                                    margin-top:6px
+                                }
+                            }
+                            .arr {
+                                border:solid 6px transparent;
+                                margin-left:10px
+                            }
+                            .down .arr {
+                                border-top-color:#ec0b0b;
+                                margin-top:2px
+                            }
+                            .up .arr {
+                                border-bottom-color:#3ab515;
+                                margin-top:-9px
+                            }
+                        </style>
+
+
+                    </div>
+                        <div class="col-lg-12 col-md-12 pad-r row mobil-gizle" id="hava_durumu">
                         <div class="weather">
                             <div class="weather-inner">
                                 <div class="w-left" style="
@@ -162,11 +316,7 @@
     "><span>İstanbul</span></div>
                                 <div class="weather-content">
                                     <ul class="clearfix" style="margin-bottom: 0;padding-left: 5%;">
-
-
                                         @for ($i = 0; $i < 5; $i++)
-
-
                                             <li class="clearfix" id="hd{{$i}}">
                                                 <div class="weather-icon sunny"><img
                                                         src="/images/hava/{{  $data["hava_durumu"]->forecasts[$i]->code }}.png">
@@ -260,6 +410,18 @@
                                     <div class="post-block-style" style="text-align: center;">
 
                                         <div class="post-thumb">
+
+										<div class="post-content">
+                                            <h2 class="post-title" style="text-align: center;margin: 10px;">
+                                                <a href="{{route("frontend.blog.index",$v["slug"])}}"
+                                                   >
+                                                    {{ $v["name"] }}
+                                                </a>
+
+                                            </h2>
+
+                                        </div>
+
                                             <a href="{{route("frontend.blog.index",$v["slug"])}} ">
                                                 <img style="border-radius: 100%;"
                                                      src="/images/users/{{$v["file"]}}" alt="{{$v["name"]}}"/>
@@ -268,13 +430,9 @@
 
                                         <div class="post-content">
                                             <h2 class="post-title" style="text-align: center;margin: 10px;">
-                                                <a href="{{route("frontend.blog.index",$v["slug"])}}"
-                                                   style="color: black;font-weight: bold;font-size: 17px;">
-                                                    {{ $v["name"] }}
-                                                </a>
-                                                <br>
+
                                                 <a href="{{route("frontend.blog.index",$v["slug"])}}">
-                                                    <small>{{$v["title"]}}</small>
+                                                    <small style="color: black;font-weight: bold;font-size: 17px;line-height: 20px;">{{$v["title"]}}</small>
                                                 </a>
                                             </h2>
 
@@ -311,20 +469,32 @@
                                          style="background-image:url('/images/blogs/{{$news->file}}')">
                                         <a href="{{route("frontend.blog.index",$news->slug)}}"
                                            class="image-link">&nbsp;</a>
-                                        <div class="overlay-post-content">
+
+                                    </div>
+									 <div class="overlay-post-content" style="border: 1px solid #ccc;">
                                             <div class="post-content" style="
     padding-top: 0px !important;
     min-height: 70px;
+    background: white;
+    color: black;
+    position: relative;
+    padding: 8px;
 ">
-                                                <small><a
+                                                <small><a style="font-size: 13px;color: red;"
                                                         href="{{route("frontend.category.index",$news->category_slug)}}">{{$news->category_name}}</a></small>
-                                                <h2 class="post-title mb-0">
+                                                <h2 style="
+    font-size: 20px;
+    line-height: 21px;
+    font-weight: 400;
+" class="post-title mb-0">
                                                     <a href="{{route("frontend.blog.index",$news->slug)}}">
-                                                        <b>{{$news->title}} </b></a>
+                                                        <b style="
+    color: black;
+    text-transform: capitalize;
+">{{$news->title}} </b></a>
                                                 </h2>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                             @endforeach
 
@@ -916,4 +1086,5 @@ width: 100%;
 @section("css")
 @endsection
 @section("js")
+
 @endsection

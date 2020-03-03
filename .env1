@@ -1,7 +1,7 @@
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:ubGVcVvrghEucn/61QA6axNdZLXp1HLuwQf5kp2f+04=
-APP_DEBUG=true
+APP_DEBUG=false
 APP_URL=http://www.turnahaber.com
 
 LOG_CHANNEL=stack
@@ -24,10 +24,10 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 
 MAIL_DRIVER=smtp
-MAIL_HOST=ros.alastyr.com
+MAIL_HOST=mail.turnahaber.com
 MAIL_PORT=465
 MAIL_USERNAME=info@turnahaber.com
-MAIL_PASSWORD=784512Parola
+MAIL_PASSWORD=306090turna
 MAIL_ENCRYPTION=ssl
 
 AWS_ACCESS_KEY_ID=

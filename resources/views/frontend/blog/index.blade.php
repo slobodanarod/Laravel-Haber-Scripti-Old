@@ -1,11 +1,31 @@
 @extends("frontend.layout")
 @section("title",$data["blog"]->title)
 @section("twitter_desc")
+@if($data["blog"]->author == 0)
+	
+			<meta property="og:image" content="https://turnahaber.com/images/blogs/{{ $data["blog"]->file}}"/>
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="{{ $data["blog"]->title }} | Turna Haber" />
+            <meta property="og:url" content="https://turnahaber.com/" />
+            <meta property="og:site_name" content="https://turnahaber.com/" />
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:image"
           content="https://turnahaber.com/images/blogs/{{ $data["blog"]->file}}"/>
     <meta name="twitter:site" content="@turnahaber"/>
     <meta name="twitter:title" content="{{ $data["blog"]->title }}"/>
+	@else
+		<meta property="og:image" content="https://turnahaber.com/images/users/{{$data["writer"]["twitter_post"]}}"/>
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="{{ $data["blog"]->title }} | Turna Haber" />
+            <meta property="og:url" content="https://turnahaber.com/" />
+            <meta property="og:site_name" content="https://turnahaber.com/" />
+		<meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image"
+          content="https://turnahaber.com/images/users/{{$data["writer"]["twitter_post"]}}"/>
+    <meta name="twitter:site" content="@turnahaber"/>
+	    <meta name="twitter:title" content="{{ $data["blog"]->title }}"/>
+	
+	@endif
 @endsection
 @section("content")
 
@@ -327,17 +347,12 @@
 
 
                             <div class="author-box d-flex">
-                                <div class="author-img">
                                     <a href="{{route("default.writer",$data["writer"]["slug"])}}">
-                                        <img src="/images/users/{{$data["writer"]["file"]}}"
+                                        <img src="/images/users/{{$data["writer"]["twitter_post"]}}" style="width:100%;"
                                              alt="{{ $data["writer"]["name"] }}">
                                     </a>
-                                </div>
-                                <div class="author-info">
-                                    <a href="{{route("default.writer",$data["writer"]["slug"])}}">
-                                        <h3>{{$data["writer"]->name}}</h3></a>
-                                    <p>{{$data["writer"]["description"]}}</p>
-                                </div>
+                              
+                              
                             </div>
 
 

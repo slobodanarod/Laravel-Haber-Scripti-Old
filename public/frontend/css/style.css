@@ -3,7 +3,7 @@
 ============================ */
 @import url("https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap");
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
 /* ==========================================
 // Typography
 ============================================= */
@@ -19,7 +19,7 @@
 
 #fullbox-slider .owl-prev {opacity: 1;    left: 15px;}
 #fullbox-slider .owl-next {opacity: 1;    right: 15px;}
-#haber-icerik h2 , p{margin:0 !important;}
+#haber-icerik h2 , p, span,p span{margin:0 !important; font-family:'Roboto' !important;}
 #haber-icerik img{margin: 10px 5px;}
 #haber-icerik img {max-width: 100%;height: auto !important;}
 
@@ -3009,10 +3009,10 @@ ul.navbar-nav > li.mega-dropdown {
     left: 0;
     top: 0;
     border-radius: 5px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), to(rgba(0, 0, 0, 0.8)));
-    background: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), to(rgba(0, 0, 0, 0.8))); */
+    /* background: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.8) 100%); */
     background: -o-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+    /* background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8) 100%); */
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;

@@ -152,7 +152,7 @@ class BlogController extends Controller
         {
             $data[ "tags" ] .= $v->name . ",";
         }
-        $data[ "category" ] = Categories::where("id",$data["blogs"]["main_cat"])->first()->toArray();
+        $data[ "category" ] = Categories::where("id",$data["blogs"]["main_cat"])->first();
 
         return view("backend.blogs.edit", compact('data'));
 

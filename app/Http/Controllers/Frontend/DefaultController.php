@@ -6,6 +6,7 @@ use App\Banners;
 use App\Blogs;
 use App\Categories;
 use App\Helper\WeatherHelper;
+use App\Helper\Para;
 use App\Http\Controllers\Controller;
 use App\Mail\SendMail;
 use App\Pages;
@@ -43,6 +44,8 @@ class DefaultController extends Controller
         $data[ "ekonomi" ]  = Categories::find(11)->news()->orderBy('id', 'desc')->get();
         $data[ "yerel" ]    = Categories::find(19)->news()->orderBy('id', 'desc')->get();
         $data[ "spor" ]     = Categories::find(8)->news()->orderBy('id', 'desc')->get();
+        $data[ "borsa" ]     = DB::table("borsa")->get();
+//        dd($data["borsa"]);
 
         /* HAVA DURUMU */
         $weather               = new WeatherHelper();
@@ -63,7 +66,6 @@ class DefaultController extends Controller
             }
 
         }
-
 
         return view("frontend.default.index", compact('data'));
     }
@@ -143,6 +145,7 @@ class DefaultController extends Controller
         return view("frontend.default.page", compact("data"));
 
     }
+
 
 
 }

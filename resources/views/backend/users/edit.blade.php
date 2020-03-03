@@ -97,9 +97,29 @@
                         </div>
                     </div>
 
+					@isset($user->twitter_post)
+                        <div class="form-group">
+                            <label for="">Twitter Yüklü Resim</label>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <img width="100" src="/images/users/{{$user->twitter_post}}">
+                                </div>
+                            </div>
+                        </div>
+                    @endisset
+
+                    <div class="form-group">
+                        <label for="">Twitter Resim Seç</label>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="file" name="twitter_post">
+                            </div>
+                        </div>
+                    </div>
+
 
                     <input type="hidden" value="{{$user->file}}" name="old_file">
-
+                    <input type="hidden" value="{{$user->twitter_post}}" name="old_twitter_post_file">
                     <div align="right" class="box-footer">
                         <button class="btn btn-success" type="submit">Düzenle</button>
                     </div>

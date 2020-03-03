@@ -25,7 +25,7 @@ class BlogController extends Controller
             $data[ "comments" ] = DB::table('comments')
                 ->join('users', 'users.id', '=', 'comments.users_id')
                 ->where('blogs_id', $data[ "blog" ][ "id" ])->selectRaw("comments.*,users.name,users.file,users.id as userID")->get();
-            $data[ "gundem" ]   = Categories::find(7)->news()->get()->take(6)->distinct("blogs.id")->sortByDesc("id");
+            $data[ "gundem" ]     = Categories::find(7)->news()->distinct("blogs.id")->get()->take(6)->sortByDesc("id");
 
         }
         else

@@ -124,16 +124,32 @@ class UserController extends Controller
         {
             $file_name = $request->old_file;
         }
+		
+		 if ($request->hasFile("twitter_post"))
+        {
+
+            $twitter_file_name = uniqid() . "." . $request->twitter_post->getClientOriginalExtension();
+            $request->twitter_post->move(public_path('images/users'), $twitter_file_name);
+            $path = "images/users/" . $request->old_twitter_post_file;
+            if (file_exists(public_path($path)))
+            {
+                @unlink(public_path($path));
+            }
+        }
+        else
+        {
+            $twitter_file_name = $request->old_twitter_post_file;
+        }
 
         if (strlen($request->password) > 0)
         {
             $request->validate(["password" => "min:6"]);
-            $user = User::where("id", $id)->update(["name" => $request->name,"description" => $request->description, "role" => $request->role, "file" => $file_name, "email" => $request->email, "password" => Hash::make($request->password), "status" => $request->status]);
+            $user = User::where("id", $id)->update(["name" => $request->name,"description" => $request->description, "role" => $request->role, "file" => $file_name,"twitter_post" => $twitter_file_name, "email" => $request->email, "password" => Hash::make($request->password), "status" => $request->status]);
 
         }
         else
         {
-            $user = User::where("id", $id)->update(["name" => $request->name,"description" => $request->description, "role" => $request->role, "file" => $file_name, "email" => $request->email, "status" => $request->status]);
+            $user = User::where("id", $id)->update(["name" => $request->name,"description" => $request->description, "role" => $request->role, "file" => $file_name, "twitter_post" => $twitter_file_name,"email" => $request->email, "status" => $request->status]);
 
         }
 

@@ -229,7 +229,7 @@ jQuery(function($) {
         reponsiveClass: true,
         dots: false,
         autoplayHoverPause: true,
-        loop:true,
+        loop:false,
         responsive: {
             // breakpoint from 0 up
             0: {
