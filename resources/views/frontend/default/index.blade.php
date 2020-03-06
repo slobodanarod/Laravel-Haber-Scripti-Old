@@ -357,38 +357,6 @@
         </div><!-- Container end -->
         <!-- Feature post end -->
 
-    {{--    <section class="trending-slider pb-0">--}}
-    {{--        <div class="container">--}}
-    {{--            <div class="ts-grid-box">--}}
-    {{--                <h2 class="block-title">--}}
-    {{--                    <span class="title-angle-shap"> Gündem</span>--}}
-    {{--                </h2>--}}
-    {{--                <div class="owl-carousel dot-style2" id="trending-slider">--}}
-
-    {{--                    @foreach($data["gundem"] as $v)--}}
-    {{--                        <div class="item post-overaly-style post-md"--}}
-    {{--                             style="background-image:url('/images/blogs/{{$v->file}}')">--}}
-    {{--                            <a href="{{route("frontend.blog.index",$v->slug)}}" class="image-link">&nbsp;</a>--}}
-    {{--                            <div class="overlay-post-content">--}}
-    {{--                                <div class="post-content">--}}
-    {{--                                    <h2 class="post-title">--}}
-    {{--                                        <a href="#">{{$v->title}}</a>--}}
-    {{--                                    </h2>--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div><!-- Item 1 end -->--}}
-    {{--                    @endforeach--}}
-    {{--                </div>--}}
-    {{--                <!-- most-populers end-->--}}
-    {{--            </div>--}}
-    {{--            <!-- ts-populer-post-box end-->--}}
-    {{--        </div>--}}
-    {{--        <!-- container end-->--}}
-    {{--    </section>--}}
-    {{--    <!-- .section -->--}}
-
-
-
     @if($settings["yazarlar"] == "1")
 
         <!-- yazarlar list -->
@@ -413,8 +381,7 @@
 
 										<div class="post-content">
                                             <h2 class="post-title" style="text-align: center;margin: 10px;">
-                                                <a href="{{route("frontend.blog.index",$v["slug"])}}"
-                                                   >
+                                                <a href="{{route("frontend.blog.index",$v["slug"])}}">
                                                     {{ $v["name"] }}
                                                 </a>
 
@@ -432,7 +399,7 @@
                                             <h2 class="post-title" style="text-align: center;margin: 10px;">
 
                                                 <a href="{{route("frontend.blog.index",$v["slug"])}}">
-                                                    <small style="color: black;font-weight: bold;font-size: 17px;line-height: 20px;">{{$v["title"]}}</small>
+                                                    <small style="color: black;font-weight: 600;font-size: 17px;line-height: 20px;">{{$v["title"]}}</small>
                                                 </a>
                                             </h2>
 
